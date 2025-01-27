@@ -1,0 +1,34 @@
+/* Static css file */
+
+body {
+    min-height: 100vh;
+    font-family: "EB Garamond", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #ede7db;
+}
+
+header {
+    color: #D1A41A;
+    background-color: #292929;
+}
+
+.nav-link, .navbar-brand, .navbar-toggler {
+    color: #D1A41A;
+}
+
+a {
+    color: #000000;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+a:hover, .nav-link:hover, .navbar-brand:hover {
+    color: #dc3545;
+}
+
+.content-block {
+    margin-top: 100px;
+}
