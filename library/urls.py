@@ -20,4 +20,6 @@ from . import views
 
 urlpatterns = [
     path('', views.library, name='library'),
+    path('<slug>', views.book, name='book'),
+    path('<book_slug>/<slug>', views.section, name='section'),
 ]

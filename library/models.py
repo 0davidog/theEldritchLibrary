@@ -8,6 +8,9 @@ class Author(models.Model):
     full_name = models.CharField(max_length=250, unique=True)
     bio = models.TextField()
 
+    def __str__(self):
+        return f'{self.full_name}'
+
 
 class Book(models.Model):
     """
@@ -26,6 +29,9 @@ class Book(models.Model):
     first_published = models.DecimalField(
         max_digits=4, decimal_places=0, blank=True
         )
+    
+    def __str__(self):
+        return f'{self.title} by {self.author} ({self.first_published})'
 
 
 class Section(models.Model):
@@ -35,5 +41,9 @@ class Section(models.Model):
     book = models.ForeignKey(Book, null=True, on_delete=models.SET_NULL)
     author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=250, editable=True)
+    subtitle = models.CharField(max_length=250, editable=True, null=True)
     slug = models.SlugField(max_length=250, editable=True)
     content = models.TextField()
+
+    def __str__(self):
+        return f'{self.book} Section {self.id}: {self.name}'

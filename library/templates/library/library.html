@@ -1,10 +1,24 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     <div class="row">
-        <div class="col mt-5">
+        <div class="col">
             <h1>All Books</h1>
             <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <ul>
+                {% for book in books %}
+                <li>
+                    <a href="{% url 'book' book.slug %}">
+                        {{ book.title }} by {{ book.author }} ({{ book.first_published }})
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>
