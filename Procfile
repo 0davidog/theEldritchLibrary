@@ -1,0 +1,1 @@
+web: gunicorn eldritchlibrary.wsgi --log-file -
